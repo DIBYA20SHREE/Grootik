@@ -1,0 +1,41 @@
+/* Toggle Button */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.theme-toggle:hover {
+  background-color: #666;
+}
+
+/* Dark Mode Styles */
+.dark {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+.dark input {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  border-color: #555;
+}
+
+.dark button {
+  background-color: #4caf50;
+}
+
+.dark .loader {
+  border-top: 6px solid #4caf50;
+}
+
+.dark .image-container img {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
