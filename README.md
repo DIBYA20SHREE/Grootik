@@ -84,10 +84,4 @@ This is the backend of a GenAI-powered text-to-image generator using **FastAPI**
 
 
 
-### 📄 License
 
-[MIT License](LICENSE)
-
----
-
-Would you like me to generate a `requirements.txt` or help you write the frontend section next?
