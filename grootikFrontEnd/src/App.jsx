@@ -1,11 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
   const [prompt, setPrompt] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState('');
-  const [darkMode, setDarkMode] = useState(false); // 🔘 NEW
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+  useEffect(() => {
+    document.body.className = isDarkMode ? 'dark' : '';
+  }, [isDarkMode]);
 
   const handleGenerate = async () => {
     if (!prompt.trim()) return;
@@ -14,12 +18,10 @@ function App() {
     setImageUrl('');
 
     try {
-      // Replace with real API
       const response = await fetch('https://api.example.com/generate-image', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          // 'Authorization': 'Bearer YOUR_API_KEY'
         },
         body: JSON.stringify({ prompt }),
       });
@@ -35,13 +37,25 @@ function App() {
   };
 
   return (
-    <div className={`container ${darkMode ? 'dark' : ''}`}>
-      {/* 🌗 Toggle Button */}
-      <button className="theme-toggle" onClick={() => setDarkMode(!darkMode)}>
-        {darkMode ? '🌞 Light Mode' : '🌙 Dark Mode'}
+    <div className="container">
+      <button
+        style={{
+          position: 'absolute',
+          top: 20,
+          right: 20,
+          padding: '10px 20px',
+          backgroundColor: isDarkMode ? '#fff' : '#121212',
+          color: isDarkMode ? '#121212' : '#fff',
+          border: 'none',
+          borderRadius: '20px',
+          cursor: 'pointer'
+        }}
+        onClick={() => setIsDarkMode(prev => !prev)}
+      >
+        {isDarkMode ? '🌞 Light Mode' : '🌙 Dark Mode'}
       </button>
 
-      <h1>🎨 GenAI Text to Image</h1>
+      <h1> GenAI Text to Image</h1>
 
       <input
         type="text"

@@ -1,0 +1,127 @@
+/* App.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* horizontal center */
+  margin-top: 10px;    /* top padding to move content downward */
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+input {
+  padding: 10px 15px;
+  width: 280px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+.loader {
+  margin-top: 20px;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #28a745;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.image-container {
+  margin-top: 20px;
+}
+
+.image-container img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+} 
+
+
+
+
+/* Toggle Button */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.theme-toggle:hover {
+  background-color: #666;
+}
+
+/* Dark Mode Styles */
+
+
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark input {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+body.dark button {
+  background-color: #2e7d32;
+}
+
+body.dark .container {
+  background-color: transparent;
+}
+
+body.dark .loader {
+  border-top: 6px solid #ffffff;
+}
